@@ -51,6 +51,9 @@ Here's a quick screen recording of the expected result:
 
 - Create a new component.
   - Don't forget, you can use an NPM script to generate the scaffolding for you! We learn how to do this in the [“Getting Started” video](https://courses.joshwcomeau.com/joy-of-react/project-wordle/04-overview)
+  ```
+  npm run new-component "NameOfComponent"
+  ```
 - This component should render a `<form>` tag, including a label and a text input.
 - The text input should be controlled by React state.
 - When the form is submitted:
