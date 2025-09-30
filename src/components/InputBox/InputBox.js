@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 
-function InputBox() {
+function InputBox({handelNewGuess}) {
   const [guess,setGuess]=useState('');
+
+  function handelSubmit(event){
+    event.preventDefault()
+    handelNewGuess(guess)
+    setGuess('')
+  }
+
   return (
   <form 
     className='guess-input-wrapper'
-    onSubmit={event=>{
-    event.preventDefault()
-    console.log(guess)
-    setGuess('')
-  }}>
+    onSubmit={handelSubmit}>
     <label className='guess-input'>
       Enter Guess:
     </label>
