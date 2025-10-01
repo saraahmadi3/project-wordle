@@ -22,7 +22,7 @@ function Game() {
 
   return (
   <>
-  <GuessResults guessRes={guessRes}/>
+  <GuessResults guessRes={guessRes} answer={answer}/>
   <InputBox handelNewGuess={handelNewGuess}/>
   </>
 );
