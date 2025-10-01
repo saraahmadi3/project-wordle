@@ -4,6 +4,7 @@ import { sample } from '../../utils';
 import { WORDS } from '../../data';
 import InputBox from '../InputBox/InputBox';
 import GuessResults from '../GuessResults/GuessResults';
+import Guess from '../Guess/Guess';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -14,11 +15,8 @@ function Game() {
   const [guessRes,setGuessRes] =useState([])
 
   function handelNewGuess(guess){
-    const newItem={
-      label:guess,
-      id:crypto.randomUUID()
-    }
-    const newGuesses = [...guessRes,newItem]
+    const newGuess=guess;
+    const newGuesses = [...guessRes,newGuess]
     setGuessRes(newGuesses)
   }
 
