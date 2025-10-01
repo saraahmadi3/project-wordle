@@ -6,6 +6,7 @@ import InputBox from '../InputBox/InputBox';
 import GuessResults from '../GuessResults/GuessResults';
 import Guess from '../Guess/Guess';
 import Banner from '../Banner/Banner';
+import Keyboard from '../Keyboard/Keyboard';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -30,6 +31,7 @@ function Game() {
   <>
   <GuessResults guessRes={guessRes} answer={answer}/>
   {!fini && <InputBox handelNewGuess={handelNewGuess} fini={fini}/>}
+  <Keyboard/>
   {fini && <Banner nrGuesses={guessRes.length} win={guessRes.at(-1)===answer} answer={answer}/>}
   </>
 );
