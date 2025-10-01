@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function InputBox({handelNewGuess}) {
+function InputBox({handelNewGuess,fini}) {
   const [guess,setGuess]=useState('');
 
   function handelSubmit(event){
@@ -17,6 +17,8 @@ function InputBox({handelNewGuess}) {
       Enter Guess:
     </label>
     <input 
+    autoFocus
+    disabled={fini}    // disable after 6 guesses or after correct guess
     required
     className='guess-input'
     value={guess} 

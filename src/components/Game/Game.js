@@ -5,6 +5,7 @@ import { WORDS } from '../../data';
 import InputBox from '../InputBox/InputBox';
 import GuessResults from '../GuessResults/GuessResults';
 import Guess from '../Guess/Guess';
+import Banner from '../Banner/Banner';
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -13,17 +14,23 @@ console.info({ answer });
 
 function Game() {
   const [guessRes,setGuessRes] =useState([])
+  const [fini,setFini]=useState(false);
 
   function handelNewGuess(guess){
     const newGuess=guess;
     const newGuesses = [...guessRes,newGuess]
     setGuessRes(newGuesses)
+    if (guess ===answer || guessRes.length>=5)  {
+      setFini(true)
+    }
   }
+
 
   return (
   <>
   <GuessResults guessRes={guessRes} answer={answer}/>
-  <InputBox handelNewGuess={handelNewGuess}/>
+  {!fini && <InputBox handelNewGuess={handelNewGuess} fini={fini}/>}
+  {fini && <Banner nrGuesses={guessRes.length} win={guessRes.at(-1)===answer} answer={answer}/>}
   </>
 );
 }
