@@ -1,14 +1,13 @@
 import React from 'react';
 import { KEYBOARD_LAYOUT } from '../../constants';
 
-function Keyboard() {
-  console.log(KEYBOARD_LAYOUT)
+function Keyboard({keyboardStatus}) {
   return (
-    <div>
+    <div className='keyboard'>
       {KEYBOARD_LAYOUT.map((row)=>(
         <p className='keyboard-row'>
           {row.map((currentKey)=>(
-            <span className='keyboard-key'>{currentKey}</span>
+            <span className={`keyboard-key${" "+keyboardStatus[currentKey]??''}`}>{currentKey}</span>
           ))}
         </p>
       ))}
