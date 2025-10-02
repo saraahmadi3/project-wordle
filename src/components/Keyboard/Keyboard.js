@@ -4,10 +4,10 @@ import { KEYBOARD_LAYOUT } from '../../constants';
 function Keyboard({keyboardStatus}) {
   return (
     <div className='keyboard'>
-      {KEYBOARD_LAYOUT.map((row)=>(
-        <p className='keyboard-row'>
-          {row.map((currentKey)=>(
-            <span className={`keyboard-key${" "+keyboardStatus[currentKey]??''}`}>{currentKey}</span>
+      {KEYBOARD_LAYOUT.map((row,indexRow)=>(
+        <p key={indexRow} className='keyboard-row'>
+          {row.map((currentKey,indexCol)=>(
+            <span key={indexCol} className={`keyboard-key${" "+keyboardStatus[currentKey]??''}`}>{currentKey}</span>
           ))}
         </p>
       ))}

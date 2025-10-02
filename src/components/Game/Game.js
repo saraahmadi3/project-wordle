@@ -10,11 +10,6 @@ import Keyboard from '../Keyboard/Keyboard';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
 import { checkGuess } from '../../game-helpers';
 
-// Pick a random word on every pageload.
-const answer = sample(WORDS);
-// To make debugging easier, we'll log the solution in the console.
-console.info({ answer });
-
 
 const initialKeyboardStatus = {};
 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(letter => {
@@ -22,7 +17,7 @@ const initialKeyboardStatus = {};
 });
 
 
-function Game() {
+function Game({answer}) {
   const [guessRes,setGuessRes] =useState([])
   const [fini,setFini]=useState({running:true,win:false});
   const [keyboardStatus, setKeyboardStatus] =useState(initialKeyboardStatus) //iterate through alphabet and set initially to undefined
@@ -44,7 +39,6 @@ function Game() {
 
     setKeyboardStatus(newKeyboardStatus)
   }
-  console.log(fini)
 
   return (
   <>

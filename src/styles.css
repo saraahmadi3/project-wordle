@@ -72,6 +72,11 @@ h1 {
   }
 }
 
+.header-button {
+  font-size: 24px;
+  margin: 14;
+}
+
 .game-wrapper {
   flex: 1;
   display: flex;
