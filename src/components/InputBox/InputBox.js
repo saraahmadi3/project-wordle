@@ -9,6 +9,14 @@ function InputBox({handelNewGuess,running}) {
     setGuess('')
   }
 
+  // no numbers or special characters
+  function handelTyping(event) {
+    const typedVal =event.target.value.toUpperCase()
+    const filteredVal = typedVal.replace(/[^A-Z]/g,'')
+    setGuess(filteredVal)
+
+  }
+
   return (
   <form 
     className='guess-input-wrapper'
@@ -22,7 +30,7 @@ function InputBox({handelNewGuess,running}) {
     required
     className='guess-input'
     value={guess} 
-    onChange={event=>setGuess(event.target.value.toUpperCase())} 
+    onChange={event=>handelTyping(event)} 
     // min and max is redundant now...
     maxLength={5}
     minLength={5}
