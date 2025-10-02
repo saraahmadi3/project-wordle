@@ -7,9 +7,6 @@ import { WORDS } from '../../data';
 const initialAnswer = sample(WORDS);
 const initialGameId = 0;
 
-console.info({ initialAnswer,initialGameId });
-
-
 
 function App() {
   const [answer, setAnswer] = useState(initialAnswer)

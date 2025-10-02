@@ -31,10 +31,20 @@ function Game({answer}) {
     const newKeyboardStatus = {...keyboardStatus};
     
     guess_with_corrections.forEach(({letter,status}) => {
-      newKeyboardStatus[letter] =status
+      const currentStatus = newKeyboardStatus[letter]
+      if (
+          (currentStatus===undefined) || 
+          (currentStatus!=='correct' && status==='correct') || 
+          (currentStatus==='incorrect' && status==='misplaced')
+        ){
+        newKeyboardStatus[letter] =status
+
+      }
     })
 
     setKeyboardStatus(newKeyboardStatus)
+    console.log(newKeyboardStatus)
+
   }
 
   return (
