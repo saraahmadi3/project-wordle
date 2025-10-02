@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function InputBox({handelNewGuess,running}) {
   const [guess,setGuess]=useState('');

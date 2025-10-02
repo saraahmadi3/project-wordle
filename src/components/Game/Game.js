@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-import { sample } from '../../utils';
-import { WORDS } from '../../data';
 import InputBox from '../InputBox/InputBox';
 import GuessResults from '../GuessResults/GuessResults';
-import Guess from '../Guess/Guess';
 import Banner from '../Banner/Banner';
 import Keyboard from '../Keyboard/Keyboard';
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';

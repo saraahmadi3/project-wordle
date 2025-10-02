@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Banner({nrGuesses, win,answer}) {
 
   const  content = win ?

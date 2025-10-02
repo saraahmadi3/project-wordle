@@ -1,7 +1,5 @@
-import React from 'react';
 import { range } from '../../utils';
-import { NUM_OF_GUESSES_ALLOWED, NUM_OF_LETTERS_ALLOWED } from '../../constants';
-import { checkGuess } from '../../game-helpers';
+import { NUM_OF_LETTERS_ALLOWED } from '../../constants';
 
 function Guess({corrections}) {
 

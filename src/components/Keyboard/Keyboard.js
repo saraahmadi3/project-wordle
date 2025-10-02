@@ -1,4 +1,3 @@
-import React from 'react';
 import { KEYBOARD_LAYOUT } from '../../constants';
 
 function Keyboard({keyboardStatus}) {
